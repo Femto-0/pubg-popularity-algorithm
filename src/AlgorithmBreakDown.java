@@ -19,6 +19,8 @@ totalPopularity+=popularityAboutToBeDonated;
     public static void main(String[] args) {
         AlgorithmBreakDown ab= new AlgorithmBreakDown();
         Scanner sc= new Scanner(System.in);
+        System.out.println("Here is the list of all the details this algorithm requires to function:");
+        System.out.println("First, donate some popularity to find change in percentage and note down the popularity % before and after donation");
         System.out.println("How much popularity did you donate to find the required details?");
         ab.popularityAboutToBeDonated = sc.nextDouble();
         System.out.println("What's the current popularity percentage?");
@@ -27,8 +29,8 @@ totalPopularity+=popularityAboutToBeDonated;
         double percentageChange= sc.nextDouble();
         double percentageBeforeDonation= ab.currentPopularityPercentageOfThePLayer-percentageChange;
         
-        System.out.println("Total popularity after donation: "+((ab.calculateTotal(percentageBeforeDonation,percentageChange, ab.popularityAboutToBeDonated))+ ab.popularityAboutToBeDonated));
-        System.out.println("would you like to know what future holds? 1--yes, 2--> No");
+        ab.calculateTotal(percentageBeforeDonation,percentageChange, ab.popularityAboutToBeDonated);
+        System.out.println("Now that we have all the details required, would you like to know what future holds? 1--yes, 2--> No");
         int choice= sc.nextInt();
         switch (choice){
             case 1:
